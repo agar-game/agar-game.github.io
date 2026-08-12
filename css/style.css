@@ -786,6 +786,10 @@ input.form-control {
   line-height: 30px;
 }.site-logo {
   border-radius: 6px;
+  max-height: 45px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 .leaderboard-row {
     background: rgba(255, 255, 255, 0.1);
