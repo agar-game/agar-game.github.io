@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Math Visualizer Lab | MathPulse K-12</title>
+  <meta name="description" content="Explore mathematical concepts visually: interactive fraction models, coordinate plane linear grapher, Pythagorean triangle explorer, and times-table sprint." />
+  <link rel="canonical" href="https://agar-game.github.io/tools.html" />
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/visualizers.css" />
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo-icon">📐</div>
+        <span>Math<span class="brand-text-accent">Pulse</span> <small style="font-size: 0.65rem; padding: 2px 6px; background: var(--color-bg-secondary); border-radius: 4px; border: 1px solid var(--color-border);">K-12</small></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="theorems.html" class="nav-link">Theorems</a></li>
+        <li><a href="practice.html" class="nav-link">Practice</a></li>
+        <li><a href="tools.html" class="nav-link active">Visualizers</a></li>
+        <li><a href="about.html" class="nav-link">Curriculum</a></li>
+        <li><a href="/lesson/" class="btn-g4mez">🎮 G4MEZ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="stat-pill" title="Earned Stars">
+          <span>⭐</span>
+          <span id="nav-stars-count">0</span>
+        </div>
+        <div class="stat-pill" title="Daily Streak">
+          <span>🔥</span>
+          <span id="nav-streak-count">1d</span>
+        </div>
+        <button class="audio-icon-btn" id="sound-toggle-btn" title="Toggle Sound">🔊</button>
+        <button class="theme-icon-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="nav-brand" style="font-size: 1.2rem;">📐 Math<span class="brand-text-accent">Pulse</span></span>
+      <button class="modal-close-btn" id="close-drawer-btn" style="position: static;">✕</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="theorems.html" class="drawer-link">52 Math Theorems & Lessons</a></li>
+      <li><a href="practice.html" class="drawer-link">Practice</a></li>
+      <li><a href="tools.html" class="drawer-link active">Interactive Lab & Tools</a></li>
+      <li><a href="about.html" class="drawer-link">Curriculum & Standards</a></li>
+      <li><a href="/lesson/" class="btn-g4mez" style="margin: 0.75rem 0 0 0; justify-content: center;">🎮 G4MEZ</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content container" style="padding-top: 2.5rem;">
+    <!-- Page Header -->
+    <div style="margin-bottom: 2.5rem; text-align: center;">
+      <span class="badge badge-primary">Interactive Math Lab</span>
+      <h1 style="font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; margin-top: 0.4rem; letter-spacing: -0.02em;">
+        Visual Explorers & Sandboxes
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 1.1rem; max-width: 680px; margin: 0.5rem auto 0;">
+        Touch, drag, and experiment with mathematical objects in real time. Build intuitive understanding before solving equations.
+      </p>
+
+      <!-- Quick Jump Anchors -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+        <a href="#fraction-lab" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">🍰 Fraction Explorer</a>
+        <a href="#grapher-lab" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">📈 Coordinate Grapher</a>
+        <a href="#pythagoras-lab" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">📐 Pythagorean Triangle</a>
+        <a href="#sprint-lab" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">⚡ Multiplication Sprint</a>
+      </div>
+    </div>
+
+    <!-- 1. Fraction Explorer -->
+    <section id="fraction-lab" style="margin-bottom: 3.5rem;">
+      <div id="fraction-visualizer-mount"></div>
+    </section>
+
+    <!-- 2. Coordinate Plane Grapher -->
+    <section id="grapher-lab" style="margin-bottom: 3.5rem;">
+      <div id="grapher-visualizer-mount"></div>
+    </section>
+
+    <!-- 3. Pythagorean Explorer -->
+    <section id="pythagoras-lab" style="margin-bottom: 3.5rem;">
+      <div id="pythagoras-visualizer-mount"></div>
+    </section>
+
+    <!-- 4. Times Table Sprint -->
+    <section id="sprint-lab" style="margin-bottom: 4rem;">
+      <div id="sprint-visualizer-mount"></div>
+    </section>
+  </main>
+
+  <!-- Reusable Topic Lesson Modal -->
+  <div class="modal-overlay" id="topic-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-info">
+          <a href="index.html" class="nav-brand">
+            <div class="brand-logo-icon">📐</div>
+            <span>Math<span class="brand-text-accent">Pulse</span> K-12</span>
+          </a>
+          <p>
+            An open educational math initiative providing students worldwide with intuitive, interactive, and beautifully designed mathematics learning from Kindergarten to Grade 12.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Grade Bands</h4>
+          <ul class="footer-links">
+            <li><a href="theorems.html?grade=k-2">Grades K–2 (Foundations)</a></li>
+            <li><a href="theorems.html?grade=3-5">Grades 3–5 (Elementary)</a></li>
+            <li><a href="theorems.html?grade=6-8">Grades 6–8 (Middle School)</a></li>
+            <li><a href="theorems.html?grade=9-10">Grades 9–10 (High School I)</a></li>
+            <li><a href="theorems.html?grade=11-12">Grades 11–12 (Pre-Calculus)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html#fraction-lab">Fraction Model Explorer</a></li>
+            <li><a href="tools.html#grapher-lab">Coordinate & Slope Grapher</a></li>
+            <li><a href="tools.html#sprint-lab">Times-Table Speed Sprint</a></li>
+            <li><a href="tools.html#pythagoras-lab">Pythagorean Explorer</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Curriculum Standards</a></li>
+            <li><a href="theorems.html">All 52 Theorems & Lessons</a></li>
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="about.html#privacy">Privacy Notice (Zero-Data)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MathPulse K-12 Academy. Open Educational Resource. Built for GitHub Pages.</p>
+        <p>Crafted with modern HTML5, CSS Grid, and Vanilla ES6+ JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Visualizers Mount Script -->
+  <script type="module">
+    import { app } from "./js/app.js";
+    import { visualizers } from "./js/modules/visualizers.js";
+
+    visualizers.initFractionExplorer("fraction-visualizer-mount");
+    visualizers.initFunctionGrapher("grapher-visualizer-mount");
+    visualizers.initPythagoreanExplorer("pythagoras-visualizer-mount");
+    visualizers.initSpeedSprint("sprint-visualizer-mount");
+  </script>
+</body>
+</html>
+
+
+
+
+
+

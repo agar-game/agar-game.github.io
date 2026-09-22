@@ -1,1088 +1,347 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<link rel="icon" href="images/favicon.png" sizes="32x32">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>Play Unblocked Games Online - The Best Free Games</title>
-				<meta name="description" content="Discover the ultimate collection of unblocked games online! Play agario, action, puzzle, racing, and multiplayer games instantly without any restrictions. Perfect for school or work breaks.">
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathPulse K-12 | Modern Interactive Math Education for Kids & Teens</title>
+  <meta name="description" content="Explore 52 interactive K-12 math topics from Kindergarten counting to 12th-grade calculus. Visual models, step-by-step examples, and instant practice quizzes." />
+  <link rel="canonical" href="https://agar-game.github.io/" />
 
-			<meta property="og:url" content="agar-game.github.io" />
-      <meta property="og:image:width" content="200 px" />
-      <meta property="og:image:height" content="200 px" />
-      <meta property="og:title" content="Play Unblocked Games Online" />
-      <meta property="og:site_name" content="agar-game.github.io" />
-      <meta property="og:description" content="Discover the ultimate collection of unblocked games online! Play agario, action, puzzle, racing, and multiplayer games instantly without any restrictions." />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://agar-game.github.io/images/icon_game.png">
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="MathPulse K-12 - Interactive Math Academy" />
+  <meta property="og:description" content="Free, gamified, and modern K-12 math learning platform with 52 Math Theorems & Lessons and visual math lab." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agar-game.github.io/" />
 
-
-						<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/jquery-comments.css" />
-		<link rel="stylesheet" type="text/css" href="css/user.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/custom.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-		<!-- Font Awesome icons (free version)-->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<!-- Google fonts-->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/visualizers.css" />
 </head>
-	<body id="page-top" style="background: url('images/background1.png'); background-size: cover;">
+<body>
+  <!-- Global Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo-icon">📐</div>
+        <span>Math<span class="brand-text-accent">Pulse</span> <small style="font-size: 0.65rem; padding: 2px 6px; background: var(--color-bg-secondary); border-radius: 4px; border: 1px solid var(--color-border);">K-12</small></span>
+      </a>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark top-nav" id="mainNav">
-    <div class="container">
-        <!-- Navbar Toggler (hamburger icon for mobile) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="theorems.html" class="nav-link">Theorems</a></li>
+        <li><a href="practice.html" class="nav-link">Practice</a></li>
+        <li><a href="tools.html" class="nav-link">Visualizers</a></li>
+        <li><a href="about.html" class="nav-link">Curriculum</a></li>
+        <li><a href="/lesson/" class="btn-g4mez">🎮 G4MEZ</a></li>
+      </ul>
 
-        <!-- Logo (brand) -->
-        <a class="navbar-brand js-scroll-trigger" href="/">
-            <img src="images/logo.png" class="site-logo" alt="logo">
-            <strong>agar-game.github.io</strong>
+      <div class="nav-actions">
+        <!-- Gamification Stats -->
+        <div class="stat-pill" title="Earned Stars">
+          <span>⭐</span>
+          <span id="nav-stars-count">0</span>
+        </div>
+        <div class="stat-pill" title="Daily Streak">
+          <span>🔥</span>
+          <span id="nav-streak-count">1d</span>
+        </div>
+        <div class="stat-pill" title="Completed Topics" style="display: none;">
+          <span>✓</span>
+          <span id="nav-completed-count">0/52</span>
+        </div>
+
+        <!-- Theme & Audio Controls -->
+        <button class="audio-icon-btn" id="sound-toggle-btn" title="Toggle Sound">🔊</button>
+        <button class="theme-icon-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="nav-brand" style="font-size: 1.2rem;">📐 Math<span class="brand-text-accent">Pulse</span></span>
+      <button class="modal-close-btn" id="close-drawer-btn" style="position: static;">✕</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link active">Home</a></li>
+      <li><a href="theorems.html" class="drawer-link">52 Math Theorems & Lessons</a></li>
+      <li><a href="practice.html" class="drawer-link">Practice</a></li>
+      <li><a href="tools.html" class="drawer-link">Interactive Lab & Tools</a></li>
+      <li><a href="about.html" class="drawer-link">Curriculum & Standards</a></li>
+      <li><a href="/lesson/" class="btn-g4mez" style="margin: 0.75rem 0 0 0; justify-content: center;">🎮 G4MEZ</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Body Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section container">
+      <div class="hero-pill">✨ The 2026 K-12 Interactive Math Platform</div>
+      <h1 class="hero-title">
+        Master Mathematics from <span class="hero-gradient-text">Kindergarten to Calculus</span>
+      </h1>
+      <p class="hero-desc">
+        Explore 52 structured, bite-sized curriculum modules with step-by-step visual examples, interactive geometry sandboxes, and instant feedback practice drills.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="theorems.html" class="btn btn-primary btn-lg">🚀 Explore All 52 Theorems & Lessons</a>
+        <a href="tools.html" class="btn btn-secondary btn-lg">🔬 Launch Visualizer Lab</a>
+      </div>
+
+      <!-- Quick Metrics Row -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-icon-box">📚</div>
+          <div class="metric-content">
+            <h4>52</h4>
+            <p>Curriculum Modules</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon-box">🎯</div>
+          <div class="metric-content">
+            <h4>5 Bands</h4>
+            <p>Kindergarten to Grade 12</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon-box">🧪</div>
+          <div class="metric-content">
+            <h4>4 Labs</h4>
+            <p>Live Math Visualizers</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon-box">⭐</div>
+          <div class="metric-content">
+            <h4>100% Free</h4>
+            <p>No Ads, Zero Sign-in Required</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade Bands Quick Jump -->
+    <section class="container" style="margin-top: 3rem; margin-bottom: 4rem;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge badge-accent">Grade Levels</span>
+        <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.5rem;">Choose Your Learning Path</h2>
+      </div>
+
+      <div class="metrics-row">
+        <a href="theorems.html?grade=k-2" class="metric-card" style="cursor: pointer;">
+          <div class="metric-icon-box">🧸</div>
+          <div class="metric-content">
+            <h4 style="font-size: 1.25rem;">Grades K–2</h4>
+            <p>Counting, Addition, Shapes & Time (10 Theorems & Lessons)</p>
+          </div>
         </a>
+        <a href="theorems.html?grade=3-5" class="metric-card" style="cursor: pointer;">
+          <div class="metric-icon-box">🚀</div>
+          <div class="metric-content">
+            <h4 style="font-size: 1.25rem;">Grades 3–5</h4>
+            <p>Multiplication, Fractions & Decimals (10 Theorems & Lessons)</p>
+          </div>
+        </a>
+        <a href="theorems.html?grade=6-8" class="metric-card" style="cursor: pointer;">
+          <div class="metric-icon-box">⚡</div>
+          <div class="metric-content">
+            <h4 style="font-size: 1.25rem;">Grades 6–8</h4>
+            <p>Pre-Algebra, Ratios & Pythagoras (10 Theorems & Lessons)</p>
+          </div>
+        </a>
+        <a href="theorems.html?grade=9-10" class="metric-card" style="cursor: pointer;">
+          <div class="metric-icon-box">🔬</div>
+          <div class="metric-content">
+            <h4 style="font-size: 1.25rem;">Grades 9–10</h4>
+            <p>Quadratics, Proofs & Right Trig (11 Theorems & Lessons)</p>
+          </div>
+        </a>
+        <a href="theorems.html?grade=11-12" class="metric-card" style="cursor: pointer;">
+          <div class="metric-icon-box">🌌</div>
+          <div class="metric-content">
+            <h4 style="font-size: 1.25rem;">Grades 11–12</h4>
+            <p>Pre-Calc, Limits, Vectors & Derivatives (11 Theorems & Lessons)</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-        <!-- Navbar Links (Collapse when on mobile) -->
-        <div class="collapse navbar-collapse" id="nav-menu">
-            <ul class="navbar-nav ms-auto"> <!-- ms-auto for right-aligned menu items -->
-                <li class="nav-item"><a class="nav-link" href="https://agar-game.github.io/categories/running">Running</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://agar-game.github.io/categories/puzzle">Puzzles</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://agar-game.github.io/categories/racing">Racing</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://agar-game.github.io/categories/skill">Skill</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://agar-game.github.io/categories/sports">Sports</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://agar-game.github.io/categories/car">Cars</a></li>
-
-                <!-- Dropdown Menu - More -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Trending</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/shooting">Shooting</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/moto">Moto</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/stickman">Stickman</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/adventure">Adventure</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/multiplayer">Multiplayer</a></li>
-                    </ul>
-                </li>
-
-                <!-- Dropdown Menu - Explore -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarExplore" role="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarExplore">
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/3d">3D</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/action">Action</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/new">New</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/popular">Popular</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/fighting">Fighting</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/idle">Idle</a></li>
-                        <li><a class="dropdown-item" href="https://agar-game.github.io/categories/2player">2 Players</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <!-- Interactive Math Lab Spotlight -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-primary">Interactive Math Lab</span>
+          <h2 style="font-size: 1.85rem; font-weight: 800; margin-top: 0.35rem;">Try Interactive Visual Models</h2>
         </div>
+        <a href="tools.html" class="btn btn-secondary">Open All Visualizers ➡️</a>
+      </div>
+
+      <div id="home-fraction-visualizer"></div>
+    </section>
+
+    <!-- Featured Theorems & Lessons Spotlight -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-accent">Featured Theorems & Lessons</span>
+          <h2 style="font-size: 1.85rem; font-weight: 800; margin-top: 0.35rem;">Popular Lessons Across Grades</h2>
+        </div>
+        <a href="theorems.html" class="btn btn-secondary">View All 52 Theorems & Lessons ➡️</a>
+      </div>
+
+      <div class="topics-grid" id="featured-topics-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Why MathPulse Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="visualizer-card" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(168, 85, 247, 0.06));">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem;">
+          <span class="badge badge-primary">Pedagogy & Design</span>
+          <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.5rem;">Why Students & Teachers Love MathPulse</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.75rem;">
+          <div class="modal-card" style="margin-bottom: 0;">
+            <h4>👁️ Visual Concept First</h4>
+            <p>Rather than dry memorization, every topic provides a visual model, geometry representation, or real-life analogy.</p>
+          </div>
+          <div class="modal-card" style="margin-bottom: 0;">
+            <h4>🧩 Step-by-Step Solutions</h4>
+            <p>Never get stuck. Toggle collapsible walkthroughs showing every algebraic or arithmetic step clearly explained.</p>
+          </div>
+          <div class="modal-card" style="margin-bottom: 0;">
+            <h4>🎮 Gamified Mastery</h4>
+            <p>Earn star points, maintain daily learning streaks, and receive instant audio-tactile feedback on practice quizzes.</p>
+          </div>
+          <div class="modal-card" style="margin-bottom: 0;">
+            <h4>🔒 Private & Instant</h4>
+            <p>Zero tracking, zero cookies, zero user accounts. All student progress stays 100% locally on your own device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Topic Lesson Modal -->
+  <div class="modal-overlay" id="topic-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="modal-body-content"></div>
     </div>
-</nav>
+  </div>
 
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-info">
+          <a href="index.html" class="nav-brand">
+            <div class="brand-logo-icon">📐</div>
+            <span>Math<span class="brand-text-accent">Pulse</span> K-12</span>
+          </a>
+          <p>
+            An open educational math initiative providing students worldwide with intuitive, interactive, and beautifully designed mathematics learning from Kindergarten to Grade 12.
+          </p>
+        </div>
 
+        <div class="footer-col">
+          <h4>Grade Bands</h4>
+          <ul class="footer-links">
+            <li><a href="theorems.html?grade=k-2">Grades K–2 (Foundations)</a></li>
+            <li><a href="theorems.html?grade=3-5">Grades 3–5 (Elementary)</a></li>
+            <li><a href="theorems.html?grade=6-8">Grades 6–8 (Middle School)</a></li>
+            <li><a href="theorems.html?grade=9-10">Grades 9–10 (High School I)</a></li>
+            <li><a href="theorems.html?grade=11-12">Grades 11–12 (Pre-Calculus)</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html#fraction-lab">Fraction Model Explorer</a></li>
+            <li><a href="tools.html#grapher-lab">Coordinate & Slope Grapher</a></li>
+            <li><a href="tools.html#sprint-lab">Times-Table Speed Sprint</a></li>
+            <li><a href="tools.html#pythagoras-lab">Pythagorean Explorer</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
 
-<section class="jumbotron text-center bg-primary text-white">
-  <h1 class="display-4">Play Unblocked Games Online</h1>
-  <p class="lead">Welcome to your ultimate destination for free unblocked games. Bypass network restrictions and jump right into the action from school, work, or home!</p>
-</section>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Curriculum Standards</a></li>
+            <li><a href="theorems.html">All 52 Theorems & Lessons</a></li>
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="about.html#privacy">Privacy Notice (Zero-Data)</a></li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="footer-bottom">
+        <p>&copy; 2026 MathPulse K-12 Academy. Open Educational Resource. Built for GitHub Pages.</p>
+        <p>Crafted with modern HTML5, CSS Grid, and Vanilla ES6+ JavaScript.</p>
+      </div>
+    </div>
+  </footer>
 
-<div class="container game-wrapper">
-<div style="padding-bottom: 20px">
-</div>
+  <!-- Core Scripts -->
+  <script type="module">
+    import { app, MATH_TOPICS, storage } from "./js/app.js";
+    import { visualizers } from "./js/modules/visualizers.js";
 
+    // 1. Mount Home Interactive Fraction Lab
+    visualizers.initFractionExplorer("home-fraction-visualizer");
 
+    // 2. Render 6 Featured Theorems & Lessons Across Bands
+    const featuredIds = [
+      "k2-addition",
+      "g35-multiplication",
+      "g35-fractions-intro",
+      "g68-linear-equations",
+      "g68-pythagorean-theorem",
+      "g910-quadratic-equations"
+    ];
 
-
-  <div class="row">
-      <div class="col-md-9">
-            <div class="game-container">
-              <div class="game-content" data-id="169">
-                <div id="allow_mobile_version"></div>     
-
-
-                <div class="game-iframe-container" id="game-player">
-                  <div id="mobile-back-button" draggable="true">
-                    <i class="bi bi-x-circle-fill"></i>
-                  </div>
-    
-                  <iframe class="game-iframe" id="game-area" src="https://agarlive.site/" width="480" height="800" scrolling="none" frameborder="0" allowfullscreen></iframe>
-                </div>
+    const featuredContainer = document.getElementById("featured-topics-container");
+    if (featuredContainer) {
+      const featuredTopics = MATH_TOPICS.filter(t => featuredIds.includes(t.id));
+      featuredContainer.innerHTML = featuredTopics.map(topic => {
+        const isDone = storage.isTopicCompleted(topic.id);
+        return `
+          <div class="topic-card" onclick="window.openTopicModal('${topic.id}')">
+            <div class="topic-card-top">
+              <div class="topic-badges-row">
+                <span class="badge badge-primary">${topic.gradeText}</span>
+                <span class="badge badge-category">${topic.category}</span>
+                ${isDone ? '<span class="badge badge-success">✓ Completed</span>' : ""}
               </div>
-
-
-              <div class="game-info">
-                <div class="header-left">
-				<h1 class="single-title">Agario Unblocked</h1>
-                    <a href="#" onclick="open_fullscreen()" class="btn btn-capsule"><i class="bi bi-arrows-fullscreen b-icon"></i>Fullscreen</a>
-
-
-                </div>
-                <div class="header-right">
-
-
-                  <div class="b-action2">
-              
-                  </div>
-                </div>
+              <div class="topic-title-box">
+                <span class="topic-icon-large">${topic.icon}</span>
+                <h3>${topic.title}</h3>
               </div>
+              <p class="topic-card-summary">${topic.summary}</p>
+              ${topic.formula ? `<div class="topic-card-formula-preview">${topic.formula}</div>` : ""}
             </div>
-
-      </div><!-- end col-9 -->
-
-<div class="col-md-3">
-    <div style="">
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-
-
-<div class="banner-ad-wrapper"><div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-</div>
-
-
-
-</div>  
-
-
-
-
-  <!-- Popular games section -->
-  <br>
-  <p class="section-title">Popular games:</p>
-  <div class="row grid-container">
-  
-
-
-
-
-
-
-
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/dreadhead-parkour">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/dreadhead-parkour.png" data-src="https://minibattles.github.io/imgs/dreadhead-parkour.png" class="small-thumb img-rounded lazyload" alt="Dreadhead Parkour play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Dreadhead Parkour</div>
-          <div class="list-category">Sports</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/raft-wars">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/raft-wars.png" data-src="https://minibattles.github.io/imgs/raft-wars.png" class="small-thumb img-rounded lazyload" alt="Raft Wars play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Raft Wars</div>
-          <div class="list-category">Action</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/g-switch-3">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/21430.webp" data-src="/img/21430.webp" class="small-thumb img-rounded lazyload" alt="G Switch 3 play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">G Switch 3</div>
-          <div class="list-category">Action</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/murder">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/murder.png" data-src="https://minibattles.github.io/imgs/murder.png" class="small-thumb img-rounded lazyload" alt="Murder play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Murder</div>
-          <div class="list-category">Action</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/we-become-what-we-behold">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/we-become-what-we-behold.png" data-src="https://minibattles.github.io/imgs/we-become-what-we-behold.png" class="small-thumb img-rounded lazyload" alt="We Become What We Behold play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">We Become What We Behold</div>
-          <div class="list-category">Adventure</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/jumping-shell">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/jumping-shell.png" data-src="https://minibattles.github.io/imgs/jumping-shell.png" class="small-thumb img-rounded lazyload" alt="Jumping Shell play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Jumping Shell</div>
-          <div class="list-category">Thinking</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/idle-digging-tycoon">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/idle-digging-tycoon.png" data-src="https://minibattles.github.io/imgs/idle-digging-tycoon.png" class="small-thumb img-rounded lazyload" alt="Idle Digging Tycoon play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Idle Digging Tycoon</div>
-          <div class="list-category">Mouse</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/who-is">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/who-is.png" data-src="https://minibattles.github.io/imgs/who-is.png" class="small-thumb img-rounded lazyload" alt="Who Is play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Who Is</div>
-          <div class="list-category">Thinking</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/gold-digger-frvr">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/gold-digger-frvr.png" data-src="https://minibattles.github.io/imgs/gold-digger-frvr.png" class="small-thumb img-rounded lazyload" alt="Gold Digger Frvr play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Gold Digger Frvr</div>
-          <div class="list-category">for Girls</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/big-shot-boxing">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/21291.webp" data-src="/img/21291.webp" class="small-thumb img-rounded lazyload" alt="Big Shot Boxing play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Big Shot Boxing</div>
-          <div class="list-category">Sports</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/idle-ants">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/idle-ants.png" data-src="https://minibattles.github.io/imgs/idle-ants.png" class="small-thumb img-rounded lazyload" alt="Idle Ants play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Idle Ants</div>
-          <div class="list-category">Mouse</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="https://agar-game.github.io/play-now/stack">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="/img/21604.webp" data-src="/img/21604.webp" class="small-thumb img-rounded lazyload" alt="Stack play on agar-game.github.io"></div>
-        <div class="list-info">
-          <div class="list-title">Stack</div>
-          <div class="list-category">Skill</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-
-
-
-
-
-
-  <div class="banner-ad-wrapper"><div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-    </div>
-
-
-
-  </div>  
-
-
-
-
-
-
-
-</div> <!-- end Poplular -->
-
-
-<div class="container" >
-  <div class="row align-items-center" >
-    <div class="col-md-6" >
-      <h2>What are Unblocked Games?</h2>
-      <p>Unblocked games are online games that you can access from anywhere, even on networks that typically restrict gaming websites, such as schools, libraries, or offices. These platforms host safe, browser-based games allowing you to relax and have fun during your breaks without needing to install any software or plugins.</p>
-    </div>
-    <div class="col-md-6" >
-      <img src="images/i7.png" alt="Unblocked Games Online" class="ff img-fluid">
-    </div>
- 
-  </div>
-</div>
-
-
-<div class="container mt-4" >
-  <div class="row align-items-center" >
-    <div class="col-md-6" >
-      <img src="images/i8.png" alt="Play Unblocked Games" class="ff img-fluid">
-    </div>
-    <div class="col-md-6" >
-      <h2>Why Play Unblocked Games?</h2>
-      <p>Whether you have 5 minutes or a whole hour, unblocked games provide the perfect quick escape. They are designed to load instantly and run smoothly on almost any device. With a massive library that includes action-packed shooters, brain-teasing puzzles, and high-speed racing titles, there is always something new and exciting to discover every day.</p>
-    </div>
-    
-  </div>
-</div>
-
-
-
-
-<div class="container text-center mt-4" >
-    <div class="text-center htt" >
-     <h3>Enjoy the Best Gaming Experience</h3>
-<p>Here are a few tips to make the most out of your time on our platform:</p>
- 
-  </div>
-  <div class="row " >
-
-
-    <div class="col-md-4" >
-      <p class="bgh">No Installation Required:</p>
-<ul>
-<li>Browser Based - All games run entirely inside your browser.</li>
-<li>Instant Play - Just click a game and start playing immediately.</li>
-<li>Safe & Secure - Our catalog is curated to be completely safe for all players.</li>
-</ul>
-    </div>
-    <div class="col-md-4" >
-      <p class="bgh">Huge Variety:</p>
-<p>We update our collection regularly with trending titles. From classic multiplayer battle arenas to the latest hyper-casual games, we have endless categories tailored just for you. Use our navigation menu to easily explore the most popular genres.</p>
-    </div>
-    <div class="col-md-4" >
-      <p class="bgh">Tips for Players:</p>
-     
-<ul>
-<li>Save Progress: Many modern unblocked games let you save your progress via local storage.</li>
-<li>Fullscreen Mode: Use the fullscreen button available on most games for an immersive experience.</li>
-<li>Share with Friends: Multiplayer games are better with friends! Send them a link and compete together.
-</li>
-</ul>
-
-     </div>
-  </div>
-</div>
-
-
-  <br>
-
-  <!-- Random games section -->
-  <p class="section-title">You may also like:</p>
-  <div class="row grid-container">
-          
-
-
-
-
-
-
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/murder">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/murder.png" data-src="https://minibattles.github.io/imgs/murder.png" class="lazyload" alt="Murder play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/stack-ball">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/stack-ball.png" data-src="https://minibattles.github.io/imgs/stack-ball.png" class="lazyload" alt="Stack Ball play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/temple-run-2">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21629.webp" data-src="/img/21629.webp" class="lazyload" alt="Temple Run 2 play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/rocket-soccer-derby">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/rocket-soccer-derby.png" data-src="https://minibattles.github.io/imgs/rocket-soccer-derby.png" class="lazyload" alt="Rocket Soccer Derby play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/the-impossible-quiz">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/the-impossible-quiz.png" data-src="https://minibattles.github.io/imgs/the-impossible-quiz.png" class="lazyload" alt="The Impossible Quiz play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/stickman-climb-2">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/stickman-climb-2.png" data-src="https://minibattles.github.io/imgs/stickman-climb-2.png" class="lazyload" alt="Stickman Climb 2 play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/moto-x3m">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21490.webp" data-src="/img/21490.webp" class="lazyload" alt="Moto X3m play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/we-become-what-we-behold">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/we-become-what-we-behold.png" data-src="https://minibattles.github.io/imgs/we-become-what-we-behold.png" class="lazyload" alt="We Become What We Behold play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/city-car-driving-stunt-master">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/city-car-driving-stunt-master.png" data-src="https://minibattles.github.io/imgs/city-car-driving-stunt-master.png" class="lazyload" alt="City Car Driving: Stunt Master play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/moto-x3m-winter">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21493.webp" data-src="/img/21493.webp" class="lazyload" alt="Moto X3m Winter play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/tiger-simulator-3d">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/tiger-simulator-3d.png" data-src="https://minibattles.github.io/imgs/tiger-simulator-3d.png" class="lazyload" alt="Tiger Simulator 3d play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/merge-cyber-racers">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/merge-cyber-racers.png" data-src="https://minibattles.github.io/imgs/merge-cyber-racers.png" class="lazyload" alt="Merge Cyber Racers play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/pop-it-master">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/pop-it-master.png" data-src="https://minibattles.github.io/imgs/pop-it-master.png" class="lazyload" alt="Pop It Master play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/retro-bowl">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21558.webp" data-src="/img/21558.webp" class="lazyload" alt="Retro Bowl play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/master-chess">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/master-chess.png" data-src="https://minibattles.github.io/imgs/master-chess.png" class="lazyload" alt="Master Chess play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/stickman-hook">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21613.webp" data-src="/img/21613.webp" class="lazyload" alt="Stickman Hook play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/drift-hunters">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/drift-hunters.png" data-src="https://minibattles.github.io/imgs/drift-hunters.png" class="lazyload" alt="Drift Hunters play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/moto-x3m-2">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21494.webp" data-src="/img/21494.webp" class="lazyload" alt="Moto X3m 2 play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/battle-wheels">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/battle-wheels.png" data-src="https://minibattles.github.io/imgs/battle-wheels.png" class="lazyload" alt="Battle Wheels play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/temple-of-boom">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/temple-of-boom.png" data-src="https://minibattles.github.io/imgs/temple-of-boom.png" class="lazyload" alt="Temple Of Boom play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/merge-round-racers">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21476.webp" data-src="/img/21476.webp" class="lazyload" alt="Merge Round Racers play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/rooftop-snipers">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21570.webp" data-src="/img/21570.webp" class="lazyload" alt="Rooftop Snipers play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/stacktris">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/stacktris.png" data-src="https://minibattles.github.io/imgs/stacktris.png" class="lazyload" alt="Stacktris play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/jumping-shell">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/jumping-shell.png" data-src="https://minibattles.github.io/imgs/jumping-shell.png" class="lazyload" alt="Jumping Shell play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/top-speed-racing-3d">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/top-speed-racing-3d.png" data-src="https://minibattles.github.io/imgs/top-speed-racing-3d.png" class="lazyload" alt="Top Speed Racing 3d play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/water-color-sort">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/water-color-sort.png" data-src="https://minibattles.github.io/imgs/water-color-sort.png" class="lazyload" alt="Water Color Sort play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/gold-digger-frvr">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/gold-digger-frvr.png" data-src="https://minibattles.github.io/imgs/gold-digger-frvr.png" class="lazyload" alt="Gold Digger Frvr play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/football-masters">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/football-masters.png" data-src="https://minibattles.github.io/imgs/football-masters.png" class="lazyload" alt="Football Masters play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/football-legends">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21402.webp" data-src="/img/21402.webp" class="lazyload" alt="Football Legends play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/house-of-hazards">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/house-of-hazards.png" data-src="https://minibattles.github.io/imgs/house-of-hazards.png" class="lazyload" alt="House Of Hazards play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/crazy-cars">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21340.webp" data-src="/img/21340.webp" class="lazyload" alt="Crazy Cars play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/basketball-stars">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21288.webp" data-src="/img/21288.webp" class="lazyload" alt="Basketball Stars play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/monster-tracks">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/monster-tracks.png" data-src="https://minibattles.github.io/imgs/monster-tracks.png" class="lazyload" alt="Monster Tracks play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/tag">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21625.webp" data-src="/img/21625.webp" class="lazyload" alt="Tag play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/getaway-shootout">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21416.webp" data-src="/img/21416.webp" class="lazyload" alt="Getaway Shootout play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/moto-road-rash-3d">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/moto-road-rash-3d.png" data-src="https://minibattles.github.io/imgs/moto-road-rash-3d.png" class="lazyload" alt="Moto Road Rash 3D play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/stickman-bike">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/stickman-bike.png" data-src="https://minibattles.github.io/imgs/stickman-bike.png" class="lazyload" alt="Stickman Bike play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/who-is">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/who-is.png" data-src="https://minibattles.github.io/imgs/who-is.png" class="lazyload" alt="Who Is play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/eugenes-life">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="https://minibattles.github.io/imgs/eugenes-life.png" data-src="https://minibattles.github.io/imgs/eugenes-life.png" class="lazyload" alt="Eugenes Life play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="https://agar-game.github.io/play-now/tunnel-rush">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail"><img src="/img/21646.webp" data-src="/img/21646.webp" class="lazyload" alt="Tunnel Rush play on agar-game.github.io"></div>
-    </div>
-  </div>
-  </a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div> <!-- end You May Like -->
-  
-
-<div class="container mt-4" >
-  <h4>Most Frequently Asked Questions About 1v1.LOL</h4>
-  <div class="accordion" id="faqAccordion" >
-    <div class="card" >
-      <div class="card-header" >
-        
-          <button class="btn " type="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
-     Can I play on my phone?
-
-          </button>
-        
-      </div>
-      <div id="collapseOne" class="collapse show" data-parent="#faqAccordion" >
-        <div class="card-body" >
-          Yes! The game is available for both iOS and Android devices so you can play wherever you are.
-
-        </div>
-      </div>
-    </div>
-
-    <div class="card" >
-      <div class="card-header" >
-        
-          <button class="btn " type="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
-        What do I need to play 1v1.LOL Online?
-
-          </button>
-        
-      </div>
-      <div id="collapseOne" class="collapse show" data-parent="#faqAccordion" >
-        <div class="card-body" >
-          Since the game runs directly in your web browser it does not need high computer specs. A good internet connection is advised for the smoothest play experience.
-
-        </div>
-      </div>
-    </div>    
-
-
-    <div class="card" >
-      <div class="card-header" >
-        
-          <button class="btn " type="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
-            Is it free to play?
-          </button>
-        
-      </div>
-      <div id="collapseOne" class="collapse show" data-parent="#faqAccordion" >
-        <div class="card-body" >
-          Yes! It is entirely free to play but you can buy cosmetic items and other enhancements in the game if you choose.
-
-        </div>
-      </div>
-    </div>
-
-
-
-        <div class="card" >
-      <div class="card-header" >
-        
-          <button class="btn " type="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
-            How can I get better at the game?
-          </button>
-        
-      </div>
-      <div id="collapseOne" class="collapse show" data-parent="#faqAccordion" >
-        <div class="card-body" >
-          To get better practice in both your shooting and building skills try out different play styles and learn from each game win or lose.
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-  <div class="banner-ad-wrapper">
-    <div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-      </div>
-  </div>  
-
-
-</div> <!-- end container -->
-
-
-
-
-
-
-
-
-
-<script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "agar-game.github.io",
-      "url": "https://agar-game.github.io/",
-      "author": {
-        "@type": "Organization",
-        "name": "agar-game.github.io"
-      },
-      "description": "agar-game.github.io offers browser games to play online.",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "any",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "worstRating": 1,
-        "bestRating": 5,
-        "ratingValue": 5,
-        "ratingCount": 1,
-        "itemReviewed": {
-          "@type": "SoftwareApplication",
-          "name": "agar-game.github.io"  
-        }
-      },
-      "image": "https://agar-game.github.io/images/icon_game.png",  
-      "offers": {
-        "@type": "Offer",
-        "category": "free",
-        "price": 0,
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "agar-game.github.io",
-          "item": "https://agar-game.github.io/"
-        }
-      ]
+            <div class="topic-card-footer">
+              <span class="topic-card-btn">Learn & Practice ➡️</span>
+              <span style="font-size: 0.8rem; color: var(--color-text-dim);">3 Questions</span>
+            </div>
+          </div>
+        `;
+      }).join("");
     }
-  ]
-</script>
-
-
-
-<div class="footer-copyright py-4">
-        <div class="container">
-    <a href="https://agar-game.github.io/">
-  <img class="foooter-logo" alt="logo" src="images/logo.png" width="150"><br><br>
-  agar-game.github.io</a>         <span class="dsb-panel">
-                <a href="terms-and-conditions">Terms & Conditions</a> - <a href="dmca-policy">DMCA Notice</a> - <a href="privacy-policy">Privacy Policy</a>          </span>
-        </div>
-    </div>
-
-
-
-    <script type="text/javascript" src="../js/jquery-3.6.2.min.js"></script>
-    <script type="text/javascript" src="../js/lazysizes.min.js"></script>
-    <script type="text/javascript" src="../js/popper.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
-
-    <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../js/custom.js"></script>
-
-
-
-
-
-  </body>
+  </script>
+</body>
 </html>
+
+
 
 
 

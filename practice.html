@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Arena & Quizzes | MathPulse K-12</title>
+  <meta name="description" content="Test your math knowledge with grade-level practice drills, mixed multi-topic quizzes, and the 60-second multiplication sprint." />
+  <link rel="canonical" href="https://agar-game.github.io/practice.html" />
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/visualizers.css" />
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo-icon">📐</div>
+        <span>Math<span class="brand-text-accent">Pulse</span> <small style="font-size: 0.65rem; padding: 2px 6px; background: var(--color-bg-secondary); border-radius: 4px; border: 1px solid var(--color-border);">K-12</small></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="theorems.html" class="nav-link">Theorems</a></li>
+        <li><a href="practice.html" class="nav-link active">Practice</a></li>
+        <li><a href="tools.html" class="nav-link">Visualizers</a></li>
+        <li><a href="about.html" class="nav-link">Curriculum</a></li>
+        <li><a href="/lesson/" class="btn-g4mez">🎮 G4MEZ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="stat-pill" title="Earned Stars">
+          <span>⭐</span>
+          <span id="nav-stars-count">0</span>
+        </div>
+        <div class="stat-pill" title="Daily Streak">
+          <span>🔥</span>
+          <span id="nav-streak-count">1d</span>
+        </div>
+        <button class="audio-icon-btn" id="sound-toggle-btn" title="Toggle Sound">🔊</button>
+        <button class="theme-icon-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="nav-brand" style="font-size: 1.2rem;">📐 Math<span class="brand-text-accent">Pulse</span></span>
+      <button class="modal-close-btn" id="close-drawer-btn" style="position: static;">✕</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="theorems.html" class="drawer-link">52 Math Theorems & Lessons</a></li>
+      <li><a href="practice.html" class="drawer-link active">Practice</a></li>
+      <li><a href="tools.html" class="drawer-link">Interactive Lab & Tools</a></li>
+      <li><a href="about.html" class="drawer-link">Curriculum & Standards</a></li>
+      <li><a href="/lesson/" class="btn-g4mez" style="margin: 0.75rem 0 0 0; justify-content: center;">🎮 G4MEZ</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content container" style="padding-top: 2.5rem;">
+    <div style="margin-bottom: 2.5rem; text-align: center;">
+      <span class="badge badge-accent">Interactive Testing</span>
+      <h1 style="font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; margin-top: 0.4rem; letter-spacing: -0.02em;">
+        Math Practice & Drill Arena
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 1.1rem; max-width: 640px; margin: 0.5rem auto 0;">
+        Build lightning-fast mental math reflexes, take randomized mixed quizzes across topics, and review your practice history.
+      </p>
+    </div>
+
+    <!-- Practice Mode Chooser Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+      <!-- Card 1: Custom Mixed Quiz Generator -->
+      <div class="visualizer-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="badge badge-primary">Mixed Quiz</span>
+            <span style="font-size: 1.5rem;">🎯</span>
+          </div>
+          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">Custom Grade Challenge</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            Select your grade band to generate a randomized multi-question test drawn from real curriculum topics.
+          </p>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted); margin-bottom: 0.4rem;">Select Grade Band:</label>
+            <select id="arena-grade-select" class="category-select" style="width: 100%; padding: 0.75rem;">
+              <option value="all">All Grades (K–12 Mixed)</option>
+              <option value="k-2">Grades K–2 (Foundations)</option>
+              <option value="3-5">Grades 3–5 (Elementary)</option>
+              <option value="6-8">Grades 6–8 (Middle School)</option>
+              <option value="9-10">Grades 9–10 (High School I)</option>
+              <option value="11-12">Grades 11–12 (Pre-Calculus)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted); margin-bottom: 0.4rem;">Number of Questions:</label>
+            <select id="arena-count-select" class="category-select" style="width: 100%; padding: 0.75rem;">
+              <option value="5">5 Questions (Quick Check)</option>
+              <option value="10" selected>10 Questions (Standard Drill)</option>
+              <option value="15">15 Questions (Full Test)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg w-100" id="launch-mixed-quiz-btn">
+          🚀 Start Challenge Quiz
+        </button>
+      </div>
+
+      <!-- Card 2: 60-Second Speed Arithmetic Sprint -->
+      <div class="visualizer-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="badge badge-accent">Fast Recall</span>
+            <span style="font-size: 1.5rem;">⚡</span>
+          </div>
+          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">60s Times-Table Sprint</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            A fast-paced multiplication arcade against the clock. Build instant recall, maintain combo multipliers, and earn bonus stars!
+          </p>
+
+          <div style="background: var(--color-bg-secondary); border-radius: var(--radius-md); padding: 1rem; border: 1px solid var(--color-border); margin-bottom: 1.5rem;">
+            <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.25rem;">Multiplication Scope:</div>
+            <div style="font-weight: 700; color: var(--color-text);">Times Tables from 2 × 2 up to 12 × 12</div>
+          </div>
+        </div>
+
+        <a href="#speed-arena" class="btn btn-secondary btn-lg w-100" onclick="document.getElementById('speed-arena-mount').scrollIntoView({behavior:'smooth'})">
+          🎮 Play Multiplication Sprint
+        </a>
+      </div>
+    </div>
+
+    <!-- Active Quiz Mount Point -->
+    <section id="arena-quiz-active-zone" style="display: none; margin-bottom: 3.5rem;">
+      <div id="arena-quiz-container"></div>
+    </section>
+
+    <!-- 60-Second Speed Sprint Embed -->
+    <section id="speed-arena" style="margin-bottom: 4rem;">
+      <div style="margin-bottom: 1.5rem;">
+        <span class="badge badge-accent">Multiplication Arcade</span>
+        <h2 style="font-size: 1.85rem; font-weight: 800; margin-top: 0.35rem;">Speed Sprint Arena</h2>
+      </div>
+      <div id="speed-arena-mount"></div>
+    </section>
+
+    <!-- Quiz History & Progress Table -->
+    <section style="margin-bottom: 4rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-primary">Practice History</span>
+          <h2 style="font-size: 1.85rem; font-weight: 800; margin-top: 0.35rem;">Your Quiz Records</h2>
+        </div>
+        <button class="btn btn-secondary" id="clear-history-btn" style="font-size: 0.85rem;">Clear History</button>
+      </div>
+
+      <div class="visualizer-card" style="padding: 0; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--color-border); background: var(--color-bg-secondary);">
+              <th style="padding: 1rem 1.25rem; font-weight: 700; color: var(--color-text-muted);">Topic</th>
+              <th style="padding: 1rem 1.25rem; font-weight: 700; color: var(--color-text-muted);">Grade</th>
+              <th style="padding: 1rem 1.25rem; font-weight: 700; color: var(--color-text-muted);">Score</th>
+              <th style="padding: 1rem 1.25rem; font-weight: 700; color: var(--color-text-muted);">Accuracy</th>
+              <th style="padding: 1rem 1.25rem; font-weight: 700; color: var(--color-text-muted);">Action</th>
+            </tr>
+          </thead>
+          <tbody id="history-table-body">
+            <!-- Injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Topic Lesson Modal -->
+  <div class="modal-overlay" id="topic-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-info">
+          <a href="index.html" class="nav-brand">
+            <div class="brand-logo-icon">📐</div>
+            <span>Math<span class="brand-text-accent">Pulse</span> K-12</span>
+          </a>
+          <p>
+            An open educational math initiative providing students worldwide with intuitive, interactive, and beautifully designed mathematics learning from Kindergarten to Grade 12.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Grade Bands</h4>
+          <ul class="footer-links">
+            <li><a href="theorems.html?grade=k-2">Grades K–2 (Foundations)</a></li>
+            <li><a href="theorems.html?grade=3-5">Grades 3–5 (Elementary)</a></li>
+            <li><a href="theorems.html?grade=6-8">Grades 6–8 (Middle School)</a></li>
+            <li><a href="theorems.html?grade=9-10">Grades 9–10 (High School I)</a></li>
+            <li><a href="theorems.html?grade=11-12">Grades 11–12 (Pre-Calculus)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html#fraction-lab">Fraction Model Explorer</a></li>
+            <li><a href="tools.html#grapher-lab">Coordinate & Slope Grapher</a></li>
+            <li><a href="tools.html#sprint-lab">Times-Table Speed Sprint</a></li>
+            <li><a href="tools.html#pythagoras-lab">Pythagorean Explorer</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Curriculum Standards</a></li>
+            <li><a href="theorems.html">All 52 Theorems & Lessons</a></li>
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="about.html#privacy">Privacy Notice (Zero-Data)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MathPulse K-12 Academy. Open Educational Resource. Built for GitHub Pages.</p>
+        <p>Crafted with modern HTML5, CSS Grid, and Vanilla ES6+ JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Practice Controller Script -->
+  <script type="module">
+    import { app, MATH_TOPICS, storage, sounds } from "./js/app.js";
+    import { QuizEngine } from "./js/modules/quiz-engine.js";
+    import { visualizers } from "./js/modules/visualizers.js";
+
+    // 1. Mount Speed Sprint in Arena
+    visualizers.initSpeedSprint("speed-arena-mount");
+
+    // 2. Custom Mixed Quiz Engine
+    const arenaQuiz = new QuizEngine();
+    const startBtn = document.getElementById("launch-mixed-quiz-btn");
+    const activeZone = document.getElementById("arena-quiz-active-zone");
+    const quizContainer = document.getElementById("arena-quiz-container");
+    const gradeSelect = document.getElementById("arena-grade-select");
+    const countSelect = document.getElementById("arena-count-select");
+
+    startBtn.addEventListener("click", () => {
+      sounds.playClick();
+      const selectedGrade = gradeSelect.value;
+      const count = parseInt(countSelect.value, 10);
+
+      // Filter topics by grade
+      let eligibleTopics = MATH_TOPICS;
+      if (selectedGrade !== "all") {
+        eligibleTopics = MATH_TOPICS.filter(t => t.gradeBand === selectedGrade);
+      }
+
+      // Collect all questions from eligible topics
+      const allQs = [];
+      eligibleTopics.forEach(topic => {
+        topic.practiceQuestions.forEach(q => {
+          allQs.push({ ...q, topicTitle: topic.title, topicGrade: topic.gradeText });
+        });
+      });
+
+      // Shuffle and slice to count
+      const shuffledQs = allQs.sort(() => Math.random() - 0.5).slice(0, count);
+
+      const syntheticTopic = {
+        id: "mixed-challenge-" + Date.now(),
+        title: selectedGrade === "all" ? "K–12 Mixed Comprehensive Drill" : `${eligibleTopics[0].gradeText} Practice Challenge`,
+        gradeText: selectedGrade === "all" ? "K–12 Mixed" : eligibleTopics[0].gradeText,
+        practiceQuestions: shuffledQs
+      };
+
+      activeZone.style.display = "block";
+      activeZone.scrollIntoView({ behavior: "smooth" });
+      arenaQuiz.startQuiz(syntheticTopic, quizContainer);
+    });
+
+    // 3. Render Quiz History Table
+    const historyTable = document.getElementById("history-table-body");
+    const clearBtn = document.getElementById("clear-history-btn");
+
+    function renderHistory() {
+      try {
+        const history = JSON.parse(localStorage.getItem("mathpulse_quiz_history") || "{}");
+        const keys = Object.keys(history);
+
+        if (keys.length === 0) {
+          historyTable.innerHTML = `
+            <tr>
+              <td colspan="5" style="text-align: center; padding: 2.5rem; color: var(--color-text-dim);">
+                No quizzes completed yet. Choose a topic or start the custom challenge above to see your scores!
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        historyTable.innerHTML = keys.map(key => {
+          const item = history[key];
+          const topic = MATH_TOPICS.find(t => t.id === key);
+          const title = topic ? topic.title : (key.startsWith("mixed") ? "Custom Challenge Drill" : key);
+          const grade = topic ? topic.gradeText : "Mixed";
+
+          return `
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <td style="padding: 1rem 1.25rem; font-weight: 600; color: var(--color-text);">${title}</td>
+              <td style="padding: 1rem 1.25rem;"><span class="badge badge-primary">${grade}</span></td>
+              <td style="padding: 1rem 1.25rem; font-weight: 700;">${item.score} / ${item.total}</td>
+              <td style="padding: 1rem 1.25rem;">
+                <span class="badge ${item.percentage >= 70 ? "badge-success" : "badge-category"}">
+                  ${item.percentage}%
+                </span>
+              </td>
+              <td style="padding: 1rem 1.25rem;">
+                ${topic ? `
+                  <button class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" onclick="window.openTopicModal('${topic.id}')">
+                    Review
+                  </button>
+                ` : "-"}
+              </td>
+            </tr>
+          `;
+        }).join("");
+      } catch {
+        // Fallback
+      }
+    }
+
+    clearBtn.addEventListener("click", () => {
+      sounds.playClick();
+      if (confirm("Are you sure you want to clear your quiz history? Your earned stars and streaks will be preserved.")) {
+        localStorage.removeItem("mathpulse_quiz_history");
+        renderHistory();
+      }
+    });
+
+    window.addEventListener("mathpulse_stats_updated", renderHistory);
+    renderHistory();
+  </script>
+</body>
+</html>
+
+
+
+
+
+

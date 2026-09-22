@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>52 K-12 Math Topics Catalog | MathPulse K-12</title>
+  <meta name="description" content="Browse our complete 52-topic interactive curriculum across Kindergarten to 12th Grade. Real-time search, grade filters, formula cards, and practice quizzes." />
+  <link rel="canonical" href="https://agar-game.github.io/topics.html" />
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/visualizers.css" />
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo-icon">📐</div>
+        <span>Math<span class="brand-text-accent">Pulse</span> <small style="font-size: 0.65rem; padding: 2px 6px; background: var(--color-bg-secondary); border-radius: 4px; border: 1px solid var(--color-border);">K-12</small></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="theorems.html" class="nav-link active">Theorems</a></li>
+        <li><a href="practice.html" class="nav-link">Practice</a></li>
+        <li><a href="tools.html" class="nav-link">Visualizers</a></li>
+        <li><a href="about.html" class="nav-link">Curriculum</a></li>
+        <li><a href="/lesson/" class="btn-g4mez">🎮 G4MEZ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="stat-pill" title="Earned Stars">
+          <span>⭐</span>
+          <span id="nav-stars-count">0</span>
+        </div>
+        <div class="stat-pill" title="Daily Streak">
+          <span>🔥</span>
+          <span id="nav-streak-count">1d</span>
+        </div>
+        <button class="audio-icon-btn" id="sound-toggle-btn" title="Toggle Sound">🔊</button>
+        <button class="theme-icon-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="nav-brand" style="font-size: 1.2rem;">📐 Math<span class="brand-text-accent">Pulse</span></span>
+      <button class="modal-close-btn" id="close-drawer-btn" style="position: static;">✕</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="theorems.html" class="drawer-link active">52 Math Theorems & Lessons</a></li>
+      <li><a href="practice.html" class="drawer-link">Practice</a></li>
+      <li><a href="tools.html" class="drawer-link">Interactive Lab & Tools</a></li>
+      <li><a href="about.html" class="drawer-link">Curriculum & Standards</a></li>
+      <li><a href="/lesson/" class="btn-g4mez" style="margin: 0.75rem 0 0 0; justify-content: center;">🎮 G4MEZ</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content container" style="padding-top: 2.5rem;">
+    <!-- Page Header -->
+    <div style="margin-bottom: 2rem;">
+      <span class="badge badge-primary">Curriculum Catalog</span>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; margin-top: 0.4rem; letter-spacing: -0.02em;">
+        All 52 Mathematics Theorems & Lessons
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-top: 0.5rem; max-width: 680px;">
+        Filter by grade level, search formulas or keywords, and click any topic to inspect the concept walkthrough and launch practice quizzes.
+      </p>
+    </div>
+
+    <!-- Multi-Filter & Search Toolbar -->
+    <div class="filter-toolbar">
+      <!-- Search Input -->
+      <div class="search-input-wrapper">
+        <span class="search-input-icon">🔍</span>
+        <input 
+          type="search" 
+          id="topic-search-input" 
+          class="search-input" 
+          placeholder="Search All 52 Theorems & Lessons by name, keyword, formula, or concept (e.g., 'fractions', 'Pythagorean', 'quadratic', 'slope')..." 
+        />
+      </div>
+
+      <!-- Grade Band Tabs -->
+      <div class="grade-pills-scroll" id="grade-pills-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sub-row: Category Select & Status Filter -->
+      <div class="filter-sub-row">
+        <div class="category-select-wrapper">
+          <label for="category-filter-select" style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted);">Discipline:</label>
+          <select id="category-filter-select" class="category-select">
+            <!-- Rendered by JS -->
+          </select>
+        </div>
+
+        <div class="status-filter-pills">
+          <button class="status-pill-btn active" data-status="all">All Theorems & Lessons</button>
+          <button class="status-pill-btn" data-status="completed">✓ Completed</button>
+          <button class="status-pill-btn" data-status="bookmarked">★ Bookmarked</button>
+        </div>
+
+        <div id="topics-count-badge" style="font-size: 0.88rem; font-weight: 700; color: var(--color-text-dim);">
+          Showing 52 theorems & lessons
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Grid -->
+    <div class="topics-grid" id="catalog-topics-grid">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-results-box" class="visualizer-card" style="display: none; text-align: center; padding: 4rem 1rem;">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">🔎</div>
+      <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">No Matching Math Theorems or Lessons Found</h3>
+      <p style="color: var(--color-text-muted); max-width: 440px; margin: 0 auto 1.5rem;">
+        Try clearing your search query or switching to "All Grades" to view all 52 lessons.
+      </p>
+      <button class="btn btn-primary" id="reset-filters-btn">🔄 Reset All Filters</button>
+    </div>
+  </main>
+
+  <!-- Reusable Topic Lesson Modal -->
+  <div class="modal-overlay" id="topic-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-info">
+          <a href="index.html" class="nav-brand">
+            <div class="brand-logo-icon">📐</div>
+            <span>Math<span class="brand-text-accent">Pulse</span> K-12</span>
+          </a>
+          <p>
+            An open educational math initiative providing students worldwide with intuitive, interactive, and beautifully designed mathematics learning from Kindergarten to Grade 12.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Grade Bands</h4>
+          <ul class="footer-links">
+            <li><a href="theorems.html?grade=k-2">Grades K–2 (Foundations)</a></li>
+            <li><a href="theorems.html?grade=3-5">Grades 3–5 (Elementary)</a></li>
+            <li><a href="theorems.html?grade=6-8">Grades 6–8 (Middle School)</a></li>
+            <li><a href="theorems.html?grade=9-10">Grades 9–10 (High School I)</a></li>
+            <li><a href="theorems.html?grade=11-12">Grades 11–12 (Pre-Calculus)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html#fraction-lab">Fraction Model Explorer</a></li>
+            <li><a href="tools.html#grapher-lab">Coordinate & Slope Grapher</a></li>
+            <li><a href="tools.html#sprint-lab">Times-Table Speed Sprint</a></li>
+            <li><a href="tools.html#pythagoras-lab">Pythagorean Explorer</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Curriculum Standards</a></li>
+            <li><a href="theorems.html">All 52 Theorems & Lessons</a></li>
+            <li><a href="about.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="about.html#privacy">Privacy Notice (Zero-Data)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MathPulse K-12 Academy. Open Educational Resource. Built for GitHub Pages.</p>
+        <p>Crafted with modern HTML5, CSS Grid, and Vanilla ES6+ JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Catalog Controller Script -->
+  <script type="module">
+    import { app, MATH_TOPICS, GRADE_BANDS, CATEGORIES, storage, sounds } from "./js/app.js";
+    import { SearchFilterEngine } from "./js/modules/search-filter.js";
+
+    const filterEngine = new SearchFilterEngine(MATH_TOPICS);
+
+    // DOM Elements
+    const searchInput = document.getElementById("topic-search-input");
+    const gradeContainer = document.getElementById("grade-pills-container");
+    const categorySelect = document.getElementById("category-filter-select");
+    const statusBtns = document.querySelectorAll(".status-pill-btn");
+    const gridContainer = document.getElementById("catalog-topics-grid");
+    const countBadge = document.getElementById("topics-count-badge");
+    const noResultsBox = document.getElementById("no-results-box");
+    const resetBtn = document.getElementById("reset-filters-btn");
+
+    // 1. Check URL parameters for ?grade=...
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialGrade = urlParams.get("grade") || "all";
+    filterEngine.setGrade(initialGrade);
+
+    // 2. Render Grade Tabs
+    gradeContainer.innerHTML = GRADE_BANDS.map(band => `
+      <button class="grade-pill-btn ${band.id === initialGrade ? "active" : ""}" data-grade="${band.id}">
+        <span>${band.icon}</span> ${band.label} (${band.count})
+      </button>
+    `).join("");
+
+    // 3. Render Category Options
+    categorySelect.innerHTML = CATEGORIES.map(cat => `
+      <option value="${cat}">${cat === "All" ? "All Disciplines" : cat}</option>
+    `).join("");
+
+    // 4. Render Topics Grid
+    function render() {
+      const filtered = filterEngine.filter(storage);
+
+      countBadge.textContent = `Showing ${filtered.length} of ${MATH_TOPICS.length} topics`;
+
+      if (filtered.length === 0) {
+        gridContainer.style.display = "none";
+        noResultsBox.style.display = "block";
+      } else {
+        gridContainer.style.display = "grid";
+        noResultsBox.style.display = "none";
+
+        gridContainer.innerHTML = filtered.map(topic => {
+          const isDone = storage.isTopicCompleted(topic.id);
+          const isBm = storage.isBookmarked(topic.id);
+
+          return `
+            <div class="topic-card" onclick="window.openTopicModal('${topic.id}')">
+              <div class="topic-card-top">
+                <div class="topic-badges-row">
+                  <div style="display: flex; gap: 0.4rem; align-items: center;">
+                    <span class="badge badge-primary">${topic.gradeText}</span>
+                    <span class="badge badge-category">${topic.category}</span>
+                  </div>
+                  <div style="display: flex; gap: 0.35rem; align-items: center;">
+                    ${isDone ? '<span class="badge badge-success">✓ Done</span>' : ""}
+                    ${isBm ? '<span title="Bookmarked" style="color: #f59e0b; font-size: 1.1rem;">★</span>' : ""}
+                  </div>
+                </div>
+
+                <div class="topic-title-box">
+                  <span class="topic-icon-large">${topic.icon}</span>
+                  <h3>${topic.title}</h3>
+                </div>
+
+                <p class="topic-card-summary">${topic.summary}</p>
+                ${topic.formula ? `<div class="topic-card-formula-preview">${topic.formula}</div>` : ""}
+              </div>
+
+              <div class="topic-card-footer">
+                <span class="topic-card-btn">Study Lesson & Quiz ➡️</span>
+                <span style="font-size: 0.8rem; color: var(--color-text-dim);">${topic.practiceQuestions.length} practice Qs</span>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+    }
+
+    // Attach Listeners
+    searchInput.addEventListener("input", (e) => {
+      filterEngine.setQuery(e.target.value);
+      render();
+    });
+
+    gradeContainer.addEventListener("click", (e) => {
+      const btn = e.target.closest(".grade-pill-btn");
+      if (!btn) return;
+      sounds.playClick();
+      gradeContainer.querySelectorAll(".grade-pill-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterEngine.setGrade(btn.dataset.grade);
+      render();
+    });
+
+    categorySelect.addEventListener("change", (e) => {
+      sounds.playClick();
+      filterEngine.setCategory(e.target.value);
+      render();
+    });
+
+    statusBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sounds.playClick();
+        statusBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        filterEngine.setStatusFilter(btn.dataset.status);
+        render();
+      });
+    });
+
+    resetBtn.addEventListener("click", () => {
+      sounds.playClick();
+      searchInput.value = "";
+      filterEngine.setQuery("");
+      filterEngine.setGrade("all");
+      filterEngine.setCategory("All");
+      filterEngine.setStatusFilter("all");
+
+      gradeContainer.querySelectorAll(".grade-pill-btn").forEach(b => {
+        b.classList.toggle("active", b.dataset.grade === "all");
+      });
+      categorySelect.value = "All";
+      statusBtns.forEach(b => {
+        b.classList.toggle("active", b.dataset.status === "all");
+      });
+
+      render();
+    });
+
+    window.addEventListener("mathpulse_stats_updated", () => {
+      render();
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
