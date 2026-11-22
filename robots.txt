@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Optimize crawl budget for Googlebot & AdSense crawler
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://agar-game.github.io/sitemap.xml

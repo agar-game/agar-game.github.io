@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#182232" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#090c10"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="920" cy="315" r="190" fill="#00ff88" stroke="#00b85c" stroke-width="10"/>
+  <circle cx="710" cy="180" r="65" fill="#ff2a85" stroke="#c80050" stroke-width="6"/>
+  <text x="80" y="250" fill="#00ff88" font-family="monospace" font-weight="700" font-size="28">60 FPS CHROMEBOOK READY • NO DOWNLOAD</text>
+  <text x="80" y="340" fill="#f0f5fa" font-family="sans-serif" font-weight="900" font-size="82">AGAR.IO UNBLOCKED</text>
+  <text x="80" y="420" fill="#99a9bf" font-family="sans-serif" font-weight="600" font-size="36">Spawn In • Pop Top-10 Cells • Hold #1 at agar-game.github.io</text>
+</svg>
