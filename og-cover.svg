@@ -6,9 +6,9 @@
   </defs>
   <rect width="1200" height="630" fill="#090c10"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
-  <circle cx="920" cy="315" r="190" fill="#00ff88" stroke="#00b85c" stroke-width="10"/>
-  <circle cx="710" cy="180" r="65" fill="#ff2a85" stroke="#c80050" stroke-width="6"/>
-  <text x="80" y="250" fill="#00ff88" font-family="monospace" font-weight="700" font-size="28">60 FPS CHROMEBOOK READY • NO DOWNLOAD</text>
-  <text x="80" y="340" fill="#f0f5fa" font-family="sans-serif" font-weight="900" font-size="82">AGAR.IO UNBLOCKED</text>
-  <text x="80" y="420" fill="#99a9bf" font-family="sans-serif" font-weight="600" font-size="36">Spawn In • Pop Top-10 Cells • Hold #1 at agar-game.github.io</text>
+  <rect x="860" y="165" width="240" height="240" rx="36" fill="#11161f" stroke="#00ff88" stroke-width="10"/>
+  <text x="980" y="325" fill="#00ff88" font-family="monospace" font-weight="900" font-size="115" text-anchor="middle">G+</text>
+  <text x="80" y="230" fill="#00ff88" font-family="monospace" font-weight="700" font-size="28">60 FPS CHROMEBOOK ARCADE • /LESSON/ ROUTE</text>
+  <text x="80" y="325" fill="#f0f5fa" font-family="sans-serif" font-weight="900" font-size="76">UNBLOCKED GAMES G+</text>
+  <text x="80" y="405" fill="#99a9bf" font-family="sans-serif" font-weight="600" font-size="34">66 EZ • 76 • 67 • WTF • Classroom 6x Vault (No Block)</text>
 </svg>
