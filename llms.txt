@@ -1,0 +1,32 @@
+# Unblocked Games G+ Hub (`https://agar-game.github.io/`)
+
+> Fast, unblocked 60 FPS HTML5 and WebGL browser arcade for school Chromebooks and managed networks. Play Unblocked Games G+, 66 EZ, 76, 67, WTF, and Classroom 6x classics directly in the browser with zero extensions, zero downloads, automatic `localStorage` save states, and instant classroom tab cloaking.
+
+## Core Architecture & Features
+- **Platform:** Pure HTML5 Canvas, WebGL 2.0, and WebAssembly (Ruffle WASM for legacy archives) hosted on GitHub Pages.
+- **School Chromebook Ready:** Runs at 60 FPS on 4GB ChromeOS devices over standard HTTPS without VPNs or Chrome Web Store extensions.
+- **Instant Portal Route:** [https://agar-game.github.io/lesson/](https://agar-game.github.io/lesson/)
+- **Full Technical Reference:** [https://agar-game.github.io/llms-full.txt](https://agar-game.github.io/llms-full.txt)
+- **Key Features:**
+  - `localStorage` persistent game saves across school periods.
+  - One-key (`~` / `` ` ``) Classroom Tab Cloak (`Google Docs - AP Calculus Notes.docx`).
+  - Instant fullscreen mode and zero intrusive popups.
+
+## Featured Game Vault Categories
+- **3D Shooters & Action:** 1v1.LOL Unblocked, masked/arena shooters, tactical building & aim trainers.
+- **Endless Runners & Reflex:** Slope Unblocked (60 FPS WebGL), Run 3, Vex 7, Tunnel Rush, Geometry Dash.
+- **Sports & Career Simulators:** Retro Bowl Unblocked, Basketball Stars, Moto X3M, BitLife Life Simulator.
+- **3D Racing & Drift:** Drift Hunters Unblocked, stunt track simulators, custom garage tuning.
+- **Idle, Strategy & .IO Multiplayer:** Cookie Clicker, 2048, Idle Breakout, Paper.io 2, Agar.io & .IO Arena.
+
+## Sections & Guides on Landing Page
+- [G+ Game Vault Catalog](https://agar-game.github.io/#vault)
+- [Unblocked Games G+ vs. 66 EZ, 76, 67, WTF & Classroom 6x Comparison](https://agar-game.github.io/#mirrors)
+- [Why `/lesson/` Survives School Content Filters](https://agar-game.github.io/#categories)
+- [School Chromebook 60 FPS Tuning Guide (Fix WebGL Lag)](https://agar-game.github.io/#chromebook-fps)
+- [Frequently Asked Questions (FAQ)](https://agar-game.github.io/#faq)
+
+## Legal & Policies
+- [Privacy Policy](https://agar-game.github.io/privacy-policy.html)
+- [Terms and Conditions](https://agar-game.github.io/terms-and-conditions.html)
+- [DMCA Policy](https://agar-game.github.io/dmca-policy.html)

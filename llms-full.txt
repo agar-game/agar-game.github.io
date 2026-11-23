@@ -1,0 +1,52 @@
+# Unblocked Games G+ Hub — Complete Technical & Catalog Reference (`llms-full.txt`)
+
+> Canonical URL: https://agar-game.github.io/
+> Short Index: https://agar-game.github.io/llms.txt
+> Direct Game Portal: https://agar-game.github.io/lesson/
+> Sitemap: https://agar-game.github.io/sitemap.xml
+
+Unblocked Games G+ Hub (`https://agar-game.github.io/`) is a high-speed HTML5, WebGL 2.0, and WebAssembly browser game portal hosted on GitHub Pages. It consolidates the top playable titles from Unblocked Games G+, Unblocked Games 66 EZ, Unblocked Games 76, Unblocked Games 67, Unblocked Games WTF, and Classroom 6x into a zero-extension, school Chromebook-compatible web launcher.
+
+---
+
+## Featured Game Catalog & Technical Specs
+
+| # | Game / Collection | Genre | Engine / Runtime | Save Mechanism | Launch Route |
+|---|---|---|---|---|---|
+| 01 | 1v1.LOL Unblocked G+ | 3D Third-Person Shooter & Building | WebGL 2.0 / Unity Web | Browser `localStorage` | https://agar-game.github.io/lesson/ |
+| 02 | Slope Unblocked 66 EZ | 3D Endless Neon Runner | WebGL 60 FPS Canvas | High-Score `localStorage` | https://agar-game.github.io/lesson/ |
+| 03 | Retro Bowl Unblocked 76 | American Football Dynasty Sim | HTML5 2D Canvas | Full Franchise Roster `localStorage` | https://agar-game.github.io/lesson/ |
+| 04 | Drift Hunters WebGL Unblocked | 3D Drift & Garage Tuning Simulator | WebGL Physics Engine | Garage & Cash `localStorage` | https://agar-game.github.io/lesson/ |
+| 05 | Geometry Dash HTML5 / Scratch | Rhythm Platformer | HTML5 Canvas / WebAudio | Level Progress `localStorage` | https://agar-game.github.io/lesson/ |
+| 06 | Basketball Stars & Moto X3M | 2-Player Sports & Stunt Racing | HTML5 2D Physics | Trophy & Unlock `localStorage` | https://agar-game.github.io/lesson/ |
+| 07 | BitLife & Cookie Clicker | Life Simulator & Idle Incremental | HTML5 DOM / Canvas | Auto-Save `localStorage` + Export String | https://agar-game.github.io/lesson/ |
+| 08 | Run 3, Vex 7 & Tunnel Rush | Fast Reflex & Parkour Runners | HTML5 / Ruffle WASM | Checkpoint `localStorage` | https://agar-game.github.io/lesson/ |
+| 09 | Paper.io 2, Agar.io & .IO Arena | Territory Capture & Cell PvP | HTML5 Canvas / 60 FPS | Nickname & Skin `localStorage` | https://agar-game.github.io/lesson/ |
+
+---
+
+## Hub Comparison Matrix
+
+| Hub Name | Typical Hosting | Primary Focus | Common Issue | Unblocked Games G+ Advantage |
+|---|---|---|---|---|
+| **Unblocked Games G+** | GitHub Pages (`/lesson/`) | 3D WebGL + 2D HTML5 Classics | None (Clean HTTPS directory) | 60 FPS, zero popups, instant tab cloak |
+| **Unblocked Games 66 EZ** | Google Sites (`sites.google.com`) | Classic 2D HTML5 & Flash ports | Blocked by GoGuardian URL keyword rules | Hosted under clean `/lesson/` path |
+| **Unblocked Games 76** | Google Sites / Mirror Subdomains | Sports, Retro Bowl, Moto X3M | Frequent mirror takedowns & dead embeds | 100% native HTML5 & Ruffle WASM |
+| **Unblocked Games 67 & 911** | Google Sites Mirrors | 2-Player Local & Physics Games | Missing save persistence across mirrors | Persistent `localStorage` on one domain |
+| **Unblocked Games WTF & Classroom 6x** | Custom Domains | 3D WebGL Shooters & Racers | Heavy ad scripts causing Chromebook lag | Lightweight zero-CLS layout |
+
+---
+
+## School Chromebook 60 FPS Optimization Guide
+1. **Lock Browser Zoom at 100% (`Ctrl + 0`):** Prevents ChromeOS compositor scaling overhead on WebGL canvases.
+2. **Use Native Fullscreen (`F4` or `F11`):** Hides the Chrome address bar and bookmark strip to maximize GPU viewport allocation.
+3. **Close Background Memory Tabs:** Close idle Google Meet, YouTube, or Google Slides tabs to free RAM on 4GB school Chromebooks.
+4. **In-Game Low Graphics Mode:** Set 3D shaders in Drift Hunters or 1v1.LOL to Low for locked 60 FPS frame pacing.
+5. **Instant Classroom Tab Cloak (`` ` `` Backtick Key):** Toggles the document title to `Google Docs - AP Calculus Notes.docx` with one keystroke.
+
+---
+
+## Legal & Compliance Pages
+- **Privacy Policy:** https://agar-game.github.io/privacy-policy.html
+- **Terms and Conditions:** https://agar-game.github.io/terms-and-conditions.html
+- **DMCA Takedown Policy:** https://agar-game.github.io/dmca-policy.html
